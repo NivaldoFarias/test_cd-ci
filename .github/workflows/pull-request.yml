@@ -10,7 +10,7 @@ jobs:
           envkey_POSTGRES_USER: 'postgres'
           envkey_POSTGRES_PASSWORD: 'postgres'
           envkey_POSTGRES_DB: 'github-ci__test'
-          envkey_DATABASE_URL: 'postgres://postgres:32270450@db_github-ci:5432/github-ci__test'
+          envkey_DATABASE_URL: 'postgres://postgres:postgres@db_github-ci:5432/github-ci__test'
           file_name: .env.test
       - name: Run tests
         run: docker-compose -f docker-compose.test.yml run node_app_github-ci npm run test
