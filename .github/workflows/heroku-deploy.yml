@@ -5,6 +5,7 @@ on:
       - main
 jobs:
   HerokuDeploy:
+    environment: deploy
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
