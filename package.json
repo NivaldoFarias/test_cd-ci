@@ -8,11 +8,12 @@
     "start": "node dist/src/server.js",
     "build": "tsc -p tsconfig.json",
     "dev": "nodemon src/server.ts",
-    "test": "dotenv -e .env.test prisma migrate dev && dotenv -e .env.test cross-env NODE_OPTIONS=--experimental-vm-modules jest -- -i",
+    "test": "dotenv -e .env.test npm run prisma:migrate && dotenv -e .env.test NODE_OPTIONS=--experimental-vm-modules jest -- -i",
     "prisma:migrate": "npx prisma migrate dev",
     "prisma:deploy": "npx prisma migrate deploy",
     "docker:build": "npm run prisma:migrate && npm start",
-    "docker:compose": "docker-compose -f docker-compose.yml up --build"
+    "docker:test": "docker-compose -f docker-compose.test.yml up",
+    "docker:compose": "docker-compose -f docker-compose.yml up"
   },
   "keywords": [],
   "author": "",
